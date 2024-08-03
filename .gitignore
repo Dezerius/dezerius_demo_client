@@ -1,0 +1,5 @@
+.venv
+.vscode
+<dbt folder name name>/target/
+<dbt folder name name>/dbt_packages/
+<dbt folder name name>/logs/

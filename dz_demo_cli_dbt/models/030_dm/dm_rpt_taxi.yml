@@ -1,0 +1,175 @@
+models:
+  - name: dm_rpt_taxi
+    description: The dm_rpt_taxi model is a data mart report model that contains
+      detailed information about taxi trips. It includes columns for the date of
+      the trip, the year and month of the trip, the vendor ID, the start and end
+      times of the trip, the number of passengers, the distance of the trip, the
+      pickup and dropoff locations, the longitude and latitude of the pickup and
+      dropoff locations, the rate code, a flag for store and forward, the
+      payment type, the fare amount, extra charges, MTA tax, improvement
+      surcharge, tip amount, tolls amount, e-hail fee, total amount, trip type,
+      and the last updated timestamp. The data is sourced from the dwh_fct_taxi
+      table in the dezerius_demo_client_dw database.
+    columns:
+      - name: m_valid_dt
+        description: This column represents the date when the data was validated. It is
+          of the date data type.
+        data_type: date
+        quote: true
+      - name: m_year_num
+        description: This column represents the year of the taxi ride. It is stored as a
+          varchar data type.
+        data_type: varchar
+        quote: true
+      - name: m_month_num
+        description: This column represents the month of the taxi ride. It is stored as
+          a varchar data type.
+        data_type: varchar
+        quote: true
+      - name: m_year_month_num
+        description: This column represents the year and month of the taxi ride in the
+          format YYYYMM. It is a string type field.
+        data_type: varchar
+        quote: true
+      - name: vendor_id
+        description: This column represents the unique identifier for the taxi vendor.
+          It is an integer type field.
+        data_type: int
+        quote: true
+      - name: pickup_start_dt
+        description: This column represents the date and time when the taxi ride
+          started. It is a datetime type field.
+        data_type: datetime
+        quote: true
+      - name: dropoff_end_dt
+        description: This column represents the date and time when the taxi ride ended.
+          It is stored in datetime format.
+        data_type: datetime
+        quote: true
+      - name: passenger_cnt
+        description: This column represents the count of passengers in a single taxi
+          ride. It is stored as an integer.
+        data_type: int
+        quote: true
+      - name: trip_distance_num
+        description: This column represents the distance of the taxi ride. It is stored
+          as a decimal number, representing the distance in miles.
+        data_type: decimal
+        quote: true
+      - name: pick_up_location_id
+        description: This column represents the unique identifier for the location where
+          the taxi ride was initiated. It is a string type and can be used to
+          join with location dimension tables for more detailed location
+          information.
+        data_type: varchar
+        quote: true
+      - name: drop_off_location_id
+        description: This column represents the unique identifier for the location where
+          the taxi ride ended. It is a string type and can be used to join with
+          location dimension tables for more detailed location information.
+        data_type: varchar
+        quote: true
+      - name: pickup_longitude_num
+        description: This column represents the longitude coordinate of the location
+          where the taxi ride was initiated. It is a decimal type and can be
+          used for geospatial analysis.
+        data_type: decimal
+        quote: true
+      - name: pickup_latitude_num
+        description: This column represents the latitude coordinate of the pickup
+          location for the taxi trip. The data type is decimal, which allows for
+          precise location data.
+        data_type: decimal
+        quote: true
+      - name: dropoff_longitude_num
+        description: This column represents the longitude coordinate of the dropoff
+          location for the taxi trip. The data type is decimal, which allows for
+          precise location data.
+        data_type: decimal
+        quote: true
+      - name: dropoff_latitude_num
+        description: This column represents the latitude coordinate of the dropoff
+          location for the taxi trip. The data type is decimal, which allows for
+          precise location data.
+        data_type: decimal
+        quote: true
+      - name: rate_code_id
+        description: The 'rate_code_id' is an integer column that represents the rate
+          code for the taxi trip. This code is used to determine the fare
+          structure for the trip, such as standard rate, JFK, Newark, etc.
+        data_type: int
+        quote: true
+      - name: store_and_fwd_flag
+        description: The 'store_and_fwd_flag' is a varchar column that indicates whether
+          the trip record was held in vehicle memory before sending to the
+          vendor, aka “store and forward,” because the vehicle did not have a
+          connection to the server. 'Y' indicates store and forward trip. 'N'
+          indicates not a store and forward trip.
+        data_type: varchar
+        quote: true
+      - name: payment_type_cd
+        description: The 'payment_type_cd' is an integer column that represents the
+          payment method used for the taxi trip. This could be cash, credit
+          card, etc. Each payment method is represented by a unique code.
+        data_type: int
+        quote: true
+      - name: fare_amt
+        description: The fare_amt column represents the base fare amount for the taxi
+          ride. This is the initial charge that the passenger has to pay before
+          any additional charges are added. The data type for this column is
+          decimal.
+        data_type: decimal
+        quote: true
+      - name: extra_amt
+        description: The extra_amt column represents any extra charges that are added to
+          the base fare. These could include charges for additional passengers,
+          luggage, or any other extra services provided during the taxi ride.
+          The data type for this column is decimal.
+        data_type: decimal
+        quote: true
+      - name: mta_tax_amt
+        description: The mta_tax_amt column represents the Metropolitan Transportation
+          Authority (MTA) tax that is added to the fare. This is a mandatory tax
+          that is charged on all taxi rides in New York City. The data type for
+          this column is decimal.
+        data_type: decimal
+        quote: true
+      - name: improvement_surcharge_amt
+        description: This column represents the amount charged as improvement surcharge
+          for the taxi ride. It is a decimal value.
+        data_type: decimal
+        quote: true
+      - name: tip_amt
+        description: This column represents the amount of tip given by the passenger for
+          the taxi ride. It is a decimal value.
+        data_type: decimal
+        quote: true
+      - name: tolls_amt
+        description: This column represents the amount of tolls paid during the taxi
+          ride. It is a decimal value.
+        data_type: decimal
+        quote: true
+      - name: ehail_fee_amt
+        description: This column represents the amount of e-hail fee charged for the
+          taxi ride. The e-hail fee is a charge for booking a taxi ride through
+          an electronic platform. The data type of this column is decimal.
+        data_type: decimal
+        quote: true
+      - name: total_amt
+        description: This column represents the total amount charged for the taxi ride.
+          This amount includes the fare amount, extra charges, MTA tax,
+          improvement surcharge, tip amount, tolls amount, and e-hail fee. The
+          data type of this column is decimal.
+        data_type: decimal
+        quote: true
+      - name: trip_type_cd
+        description: This column represents the code for the type of trip. The trip type
+          could be a standard trip, a shared trip, or any other type defined by
+          the taxi service provider. The data type of this column is integer.
+        data_type: int
+        quote: true
+      - name: m_updated_at_dttm
+        description: This column represents the date and time when the record was last
+          updated in the 'dm_rpt_taxi' model. It is of 'datetime2' data type.
+        data_type: datetime2
+        quote: true
