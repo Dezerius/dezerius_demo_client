@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "dw_dezerius_demo_client"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dc8ffcf9-4eee-4095-834d-9fd997e8c74a"
+  }
+}

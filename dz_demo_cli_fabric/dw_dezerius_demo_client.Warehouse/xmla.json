@@ -1,0 +1,1469 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "dbt_csl_dm.dm_rpt_taxi",
+        "sourceLineageTag": "[dbt_csl_dm].[dm_rpt_taxi]",
+        "columns": [
+          {
+            "name": "m_valid_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "m_valid_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "m_valid_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_year_num",
+            "dataType": "string",
+            "sourceColumn": "m_year_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_year_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_month_num",
+            "dataType": "string",
+            "sourceColumn": "m_month_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_month_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_year_month_num",
+            "dataType": "string",
+            "sourceColumn": "m_year_month_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_year_month_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "vendor_id",
+            "dataType": "int64",
+            "sourceColumn": "vendor_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "vendor_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pickup_start_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "pickup_start_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "pickup_start_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_end_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "dropoff_end_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "dropoff_end_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "passenger_cnt",
+            "dataType": "int64",
+            "sourceColumn": "passenger_cnt",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "passenger_cnt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "trip_distance_num",
+            "dataType": "double",
+            "sourceColumn": "trip_distance_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "trip_distance_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "pick_up_location_id",
+            "dataType": "string",
+            "sourceColumn": "pick_up_location_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "pick_up_location_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "drop_off_location_id",
+            "dataType": "string",
+            "sourceColumn": "drop_off_location_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "drop_off_location_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pickup_longitude_num",
+            "dataType": "double",
+            "sourceColumn": "pickup_longitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "pickup_longitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "pickup_latitude_num",
+            "dataType": "double",
+            "sourceColumn": "pickup_latitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "pickup_latitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_longitude_num",
+            "dataType": "double",
+            "sourceColumn": "dropoff_longitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "dropoff_longitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_latitude_num",
+            "dataType": "double",
+            "sourceColumn": "dropoff_latitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "dropoff_latitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "rate_code_id",
+            "dataType": "int64",
+            "sourceColumn": "rate_code_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "rate_code_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "store_and_fwd_flag",
+            "dataType": "string",
+            "sourceColumn": "store_and_fwd_flag",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "store_and_fwd_flag",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "payment_type_cd",
+            "dataType": "int64",
+            "sourceColumn": "payment_type_cd",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "payment_type_cd",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fare_amt",
+            "dataType": "double",
+            "sourceColumn": "fare_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "fare_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "extra_amt",
+            "dataType": "double",
+            "sourceColumn": "extra_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "extra_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "mta_tax_amt",
+            "dataType": "double",
+            "sourceColumn": "mta_tax_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "mta_tax_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "improvement_surcharge_amt",
+            "dataType": "double",
+            "sourceColumn": "improvement_surcharge_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "improvement_surcharge_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "tip_amt",
+            "dataType": "double",
+            "sourceColumn": "tip_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "tip_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "tolls_amt",
+            "dataType": "double",
+            "sourceColumn": "tolls_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "tolls_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "ehail_fee_amt",
+            "dataType": "double",
+            "sourceColumn": "ehail_fee_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "ehail_fee_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_amt",
+            "dataType": "double",
+            "sourceColumn": "total_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "total_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "trip_type_cd",
+            "dataType": "int64",
+            "sourceColumn": "trip_type_cd",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "trip_type_cd",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "dataType": "dateTime",
+            "sourceColumn": "m_updated_at_dttm",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dm_rpt_taxi",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_dm"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "dbt_csl_dwh.dwh_fct_taxi",
+        "sourceLineageTag": "[dbt_csl_dwh].[dwh_fct_taxi]",
+        "columns": [
+          {
+            "name": "m_valid_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "m_valid_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "m_valid_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_year_num",
+            "dataType": "string",
+            "sourceColumn": "m_year_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_year_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_month_num",
+            "dataType": "string",
+            "sourceColumn": "m_month_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_month_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_year_month_num",
+            "dataType": "string",
+            "sourceColumn": "m_year_month_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_year_month_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "vendor_id",
+            "dataType": "int64",
+            "sourceColumn": "vendor_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "vendor_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pickup_start_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "pickup_start_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "pickup_start_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_end_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "dropoff_end_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "dropoff_end_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "passenger_cnt",
+            "dataType": "int64",
+            "sourceColumn": "passenger_cnt",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "passenger_cnt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "trip_distance_num",
+            "dataType": "double",
+            "sourceColumn": "trip_distance_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "trip_distance_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "pick_up_location_id",
+            "dataType": "string",
+            "sourceColumn": "pick_up_location_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "pick_up_location_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "drop_off_location_id",
+            "dataType": "string",
+            "sourceColumn": "drop_off_location_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "drop_off_location_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pickup_longitude_num",
+            "dataType": "double",
+            "sourceColumn": "pickup_longitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "pickup_longitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "pickup_latitude_num",
+            "dataType": "double",
+            "sourceColumn": "pickup_latitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "pickup_latitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_longitude_num",
+            "dataType": "double",
+            "sourceColumn": "dropoff_longitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "dropoff_longitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_latitude_num",
+            "dataType": "double",
+            "sourceColumn": "dropoff_latitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "dropoff_latitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "rate_code_id",
+            "dataType": "int64",
+            "sourceColumn": "rate_code_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "rate_code_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "store_and_fwd_flag",
+            "dataType": "string",
+            "sourceColumn": "store_and_fwd_flag",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "store_and_fwd_flag",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "payment_type_cd",
+            "dataType": "int64",
+            "sourceColumn": "payment_type_cd",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "payment_type_cd",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fare_amt",
+            "dataType": "double",
+            "sourceColumn": "fare_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "fare_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "extra_amt",
+            "dataType": "double",
+            "sourceColumn": "extra_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "extra_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "mta_tax_amt",
+            "dataType": "double",
+            "sourceColumn": "mta_tax_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "mta_tax_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "improvement_surcharge_amt",
+            "dataType": "double",
+            "sourceColumn": "improvement_surcharge_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "improvement_surcharge_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "tip_amt",
+            "dataType": "double",
+            "sourceColumn": "tip_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "tip_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "tolls_amt",
+            "dataType": "double",
+            "sourceColumn": "tolls_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "tolls_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "ehail_fee_amt",
+            "dataType": "double",
+            "sourceColumn": "ehail_fee_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "ehail_fee_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_amt",
+            "dataType": "double",
+            "sourceColumn": "total_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "total_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "trip_type_cd",
+            "dataType": "int64",
+            "sourceColumn": "trip_type_cd",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "trip_type_cd",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "dataType": "dateTime",
+            "sourceColumn": "m_updated_at_dttm",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dwh_fct_taxi",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_dwh"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dbt_csl_stg.stg_nyt_ny_taxi_green_demo_client",
+        "sourceLineageTag": "[dbt_csl_stg].[stg_nyt_ny_taxi_green_demo_client]",
+        "columns": [
+          {
+            "name": "m_valid_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "m_valid_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "m_valid_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_year_num",
+            "dataType": "string",
+            "sourceColumn": "m_year_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_year_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_month_num",
+            "dataType": "string",
+            "sourceColumn": "m_month_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_month_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_year_month_num",
+            "dataType": "string",
+            "sourceColumn": "m_year_month_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "m_year_month_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "vendor_id",
+            "dataType": "int64",
+            "sourceColumn": "vendor_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "vendor_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pickup_start_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "pickup_start_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime",
+            "sourceLineageTag": "pickup_start_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_end_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "dropoff_end_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime",
+            "sourceLineageTag": "dropoff_end_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "passenger_cnt",
+            "dataType": "int64",
+            "sourceColumn": "passenger_cnt",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "passenger_cnt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "trip_distance_num",
+            "dataType": "double",
+            "sourceColumn": "trip_distance_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "trip_distance_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "pick_up_location_id",
+            "dataType": "string",
+            "sourceColumn": "pick_up_location_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "pick_up_location_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "drop_off_location_id",
+            "dataType": "string",
+            "sourceColumn": "drop_off_location_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "drop_off_location_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pickup_longitude_num",
+            "dataType": "double",
+            "sourceColumn": "pickup_longitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "pickup_longitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "pickup_latitude_num",
+            "dataType": "double",
+            "sourceColumn": "pickup_latitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "pickup_latitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_longitude_num",
+            "dataType": "double",
+            "sourceColumn": "dropoff_longitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "dropoff_longitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "dropoff_latitude_num",
+            "dataType": "double",
+            "sourceColumn": "dropoff_latitude_num",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "dropoff_latitude_num",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "rate_code_id",
+            "dataType": "int64",
+            "sourceColumn": "rate_code_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "rate_code_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "store_and_fwd_flag",
+            "dataType": "string",
+            "sourceColumn": "store_and_fwd_flag",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "store_and_fwd_flag",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "payment_type_cd",
+            "dataType": "int64",
+            "sourceColumn": "payment_type_cd",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "payment_type_cd",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fare_amt",
+            "dataType": "double",
+            "sourceColumn": "fare_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "fare_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "extra_amt",
+            "dataType": "double",
+            "sourceColumn": "extra_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "extra_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "mta_tax_amt",
+            "dataType": "double",
+            "sourceColumn": "mta_tax_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "mta_tax_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "improvement_surcharge_amt",
+            "dataType": "double",
+            "sourceColumn": "improvement_surcharge_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "improvement_surcharge_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "tip_amt",
+            "dataType": "double",
+            "sourceColumn": "tip_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "tip_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "tolls_amt",
+            "dataType": "double",
+            "sourceColumn": "tolls_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "tolls_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "ehail_fee_amt",
+            "dataType": "double",
+            "sourceColumn": "ehail_fee_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "ehail_fee_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_amt",
+            "dataType": "double",
+            "sourceColumn": "total_amt",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "total_amt",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "trip_type_cd",
+            "dataType": "int64",
+            "sourceColumn": "trip_type_cd",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "trip_type_cd",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "dataType": "dateTime",
+            "sourceColumn": "m_updated_at_dttm",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "stg_nyt_ny_taxi_green_demo_client",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_stg"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"dbt_csl_stg.stg_nyt_ny_taxi_green_demo_client\",\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"dbt_csl_dwh.dwh_fct_taxi\",\"dbt_csl_dm.dm_rpt_taxi\"]"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

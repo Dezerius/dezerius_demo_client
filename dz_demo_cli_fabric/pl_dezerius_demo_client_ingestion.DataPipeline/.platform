@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_dezerius_demo_client_ingestion"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8a969e34-c5c9-4a05-83c1-b0c2e247defd"
+  }
+}
