@@ -4,8 +4,8 @@ SELECT
     ,[m_month_num]
     ,[m_year_month_num]
     ,[vendorID] as vendor_id
-    ,CAST([lpepPickupDatetime] AS DATETIME) as pickup_start_dt
-    ,CAST([lpepDropoffDatetime] AS DATETIME) as dropoff_end_dt
+    ,CAST([lpepPickupDatetime] AS DATETIME2(6)) as pickup_start_dt
+    ,CAST([lpepDropoffDatetime] AS DATETIME2(6)) as dropoff_end_dt
     ,[passengerCount] as passenger_cnt
     ,CAST([tripDistance] AS DECIMAL({{var('decimal_precision')}}, {{var('decimal_scale')}})) as trip_distance_num
     ,[puLocationId] as pick_up_location_id

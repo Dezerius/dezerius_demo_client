@@ -32,14 +32,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dz_demo_cli_dbt:
     # Config indicated by + and applies to all files under models/example/
-    010_bronze:
-      +schema: bronze
+    010_stg:
+      +schema: stg
       +materialized: view
-    020_silver:
-      +schema: silver
+    020_dwh:
+      +schema: dwh
       +materialized: table
-    030_gold:
-      +schema: gold
+    030_dm:
+      +schema: dm
       +materialized: table
 
 vars:

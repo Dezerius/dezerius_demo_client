@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: landing_delta
-    database: dezerius_demo_client_lh
+    database: lh_dezerius_demo_client
     schema: dbo
     loaded_at_field: m_updated_at_dttm
     tables:
