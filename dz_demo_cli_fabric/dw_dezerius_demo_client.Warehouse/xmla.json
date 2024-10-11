@@ -472,7 +472,7 @@
         ],
         "partitions": [
           {
-            "name": "{{Dataset_Name}}",
+            "name": "{{Partition_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
@@ -949,7 +949,7 @@
         ],
         "partitions": [
           {
-            "name": "{{Dataset_Name}}",
+            "name": "{{Partition_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
@@ -1426,7 +1426,7 @@
         ],
         "partitions": [
           {
-            "name": "{{Dataset_Name}}",
+            "name": "{{Partition_Name}}",
             "mode": "directLake",
             "source": {
               "type": "entity",
@@ -1455,10 +1455,6 @@
       {
         "name": "__PBI_TimeIntelligenceEnabled",
         "value": "0"
-      },
-      {
-        "name": "PBI_QueryOrder",
-        "value": "[\"dbt_csl_stg.stg_nyt_ny_taxi_green_demo_client\",\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"dbt_csl_dwh.dwh_fct_taxi\",\"dbt_csl_dm.dm_rpt_taxi\"]"
       },
       {
         "name": "SourceLineageTagType",
