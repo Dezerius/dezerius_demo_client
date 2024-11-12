@@ -8,7 +8,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.1102.0 (24.10)"
+        "value": "2.139.7481.1 (Main)"
       },
       {
         "name": "PBI_QueryOrder",
@@ -92,6 +92,21 @@
         "fromTable": "dm_fct_taxi",
         "toColumn": "payment_type_id",
         "toTable": "dm_dim_payment_type"
+      },
+      {
+        "name": "ae5881cc-4c82-7692-b2a2-bbfbabe92ae3",
+        "fromColumn": "pick_up_location_id",
+        "fromTable": "dm_fct_taxi",
+        "toColumn": "location_id",
+        "toTable": "dm_dim_taxi_zone"
+      },
+      {
+        "name": "5969bcae-096e-f615-f768-3753f72beb3c",
+        "fromColumn": "drop_off_location_id",
+        "fromTable": "dm_fct_taxi",
+        "isActive": false,
+        "toColumn": "location_id",
+        "toTable": "dm_dim_taxi_zone"
       }
     ],
     "roles": [
@@ -490,7 +505,7 @@
             "sourceColumn": "location_id",
             "sourceLineageTag": "location_id",
             "sourceProviderType": "int",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "borough_desc",
@@ -736,7 +751,7 @@
             "sourceColumn": "pick_up_location_id",
             "sourceLineageTag": "pick_up_location_id",
             "sourceProviderType": "int",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "drop_off_location_id",
