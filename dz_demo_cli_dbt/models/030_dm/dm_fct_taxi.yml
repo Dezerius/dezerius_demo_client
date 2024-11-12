@@ -31,7 +31,7 @@ models:
           format YYYYMM. It is a string type field.
         data_type: varchar
         quote: true
-      - name: vendor_id
+      - name: vendor_type_id
         description: This column represents the unique identifier for the taxi vendor.
           It is an integer type field.
         data_type: int
@@ -107,8 +107,8 @@ models:
           indicates not a store and forward trip.
         data_type: varchar
         quote: true
-      - name: payment_type_cd
-        description: The 'payment_type_cd' is an integer column that represents the
+      - name: payment_type_id
+        description: The 'payment_type_id' is an integer column that represents the
           payment method used for the taxi trip. This could be cash, credit
           card, etc. Each payment method is represented by a unique code.
         data_type: int
