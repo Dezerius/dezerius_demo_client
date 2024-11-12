@@ -1,5 +1,5 @@
 SELECT 
-    [LocationID] as location_id
+    CAST([LocationID] AS INT) as location_id
     ,[Borough] as borough_desc
     ,[Zone] as zone_desc
     ,[service_zone] as service_zone_desc
