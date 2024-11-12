@@ -1,5 +1,5 @@
 models:
-  - name: dm_rpt_taxi
+  - name: dm_fct_taxi
     description: The dm_rpt_taxi model is a data mart report model that contains
       detailed information about taxi trips. It includes columns for the date of
       the trip, the year and month of the trip, the vendor ID, the start and end

@@ -8,6 +8,18 @@ sources:
     tables:
     - name: ld_nyt_ny_taxi_green_demo_client
       identifier: ld_nyt_ny_taxi_green_demo_client
+    - name: ld_nyt_nytgreenpaymenttypedim
+      identifier: ld_nyt_nytgreenpaymenttypedim
+    - name: ld_nyt_nytgreenratecodedim
+      identifier: ld_nyt_nytgreenratecodedim
+    - name: ld_nyt_nytgreenstoreandforwarddim
+      identifier: ld_nyt_nytgreenstoreandforwarddim
+    - name: ld_nyt_nytgreentaxizonelookup
+      identifier: ld_nyt_nytgreentaxizonelookup
+    - name: ld_nyt_nytgreentriptypedim
+      identifier: ld_nyt_nytgreentriptypedim
+    - name: ld_nyt_nytgreenvendortypedim
+      identifier: ld_nyt_nytgreenvendortypedim
 
 
 
