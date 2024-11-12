@@ -8,7 +8,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.132.7385.2 (Main)"
+        "value": "2.139.7481.1 (Main)"
       },
       {
         "name": "PBI_QueryOrder",
@@ -57,6 +57,43 @@
         "lineageTag": "266bd941-4a69-4627-975c-1e4c194ed21c"
       }
     ],
+    "relationships": [
+      {
+        "name": "366759ab-73bb-cae2-9624-2720beeaf632",
+        "fromColumn": "vendor_type_id",
+        "fromTable": "dm_fct_taxi",
+        "toColumn": "vendor_type_id",
+        "toTable": "dm_dim_vendor_type"
+      },
+      {
+        "name": "6d5ba0be-60cc-a1f1-97b7-cf90eb216d73",
+        "fromColumn": "trip_type_id",
+        "fromTable": "dm_fct_taxi",
+        "toColumn": "trip_type_id",
+        "toTable": "dm_dim_trip_type"
+      },
+      {
+        "name": "4a8261b9-478d-ce97-d6b7-a8fe4225f8a7",
+        "fromColumn": "store_and_fwd_flag",
+        "fromTable": "dm_fct_taxi",
+        "toColumn": "store_and_fwd_flg",
+        "toTable": "dm_dim_store_and_forward"
+      },
+      {
+        "name": "1dc22951-549b-96ba-c2a9-420cf0fcaef2",
+        "fromColumn": "rate_code_id",
+        "fromTable": "dm_fct_taxi",
+        "toColumn": "rate_code_id",
+        "toTable": "dm_dim_rate_code"
+      },
+      {
+        "name": "a967ed67-746c-e580-91a7-862d3d0efc9b",
+        "fromColumn": "payment_type_id",
+        "fromTable": "dm_fct_taxi",
+        "toColumn": "payment_type_id",
+        "toTable": "dm_dim_payment_type"
+      }
+    ],
     "roles": [
       {
         "name": "Untitled",
@@ -66,19 +103,13 @@
             "value": "553040fc4708423ab345f089db29d7f6"
           }
         ],
-        "modelPermission": "read",
-        "tablePermissions": [
-          {
-            "name": "dwh_fct_taxi",
-            "filterExpression": "[fare_amt] == 100"
-          }
-        ]
+        "modelPermission": "read"
       }
     ],
     "sourceQueryCulture": "en-US",
     "tables": [
       {
-        "name": "stg_nyt_ny_taxi_green_demo_client",
+        "name": "dm_dim_store_and_forward",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -87,23 +118,7 @@
         ],
         "columns": [
           {
-            "name": "m_valid_dt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "General Date",
-            "lineageTag": "96314e81-b739-4c36-b4fe-c8451d6f2b9e",
-            "sourceColumn": "m_valid_dt",
-            "sourceLineageTag": "m_valid_dt",
-            "sourceProviderType": "date",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "m_year_num",
+            "name": "store_and_fwd_flg",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -111,14 +126,14 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "4566a360-6125-4654-862f-c527da9ed9bc",
-            "sourceColumn": "m_year_num",
-            "sourceLineageTag": "m_year_num",
+            "lineageTag": "2eae0efa-d6bb-4052-853b-8606635749aa",
+            "sourceColumn": "store_and_fwd_flg",
+            "sourceLineageTag": "store_and_fwd_flg",
             "sourceProviderType": "varchar(8000)",
             "summarizeBy": "none"
           },
           {
-            "name": "m_month_num",
+            "name": "store_and_fwd_desc",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -126,430 +141,11 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "680d8ece-f599-41f4-9931-49d53209c230",
-            "sourceColumn": "m_month_num",
-            "sourceLineageTag": "m_month_num",
+            "lineageTag": "43375029-792f-4a77-aeec-ff02535f7be4",
+            "sourceColumn": "store_and_fwd_desc",
+            "sourceLineageTag": "store_and_fwd_desc",
             "sourceProviderType": "varchar(8000)",
             "summarizeBy": "none"
-          },
-          {
-            "name": "m_year_month_num",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "ec311937-deba-4538-93b9-fce99e30e8b6",
-            "sourceColumn": "m_year_month_num",
-            "sourceLineageTag": "m_year_month_num",
-            "sourceProviderType": "varchar(8000)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "vendor_id",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "a94afb95-112b-4bbd-8948-47e4f87c8f08",
-            "sourceColumn": "vendor_id",
-            "sourceLineageTag": "vendor_id",
-            "sourceProviderType": "int",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "pickup_start_dt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "General Date",
-            "lineageTag": "060bf930-ed57-42d7-8177-bae927633c8d",
-            "sourceColumn": "pickup_start_dt",
-            "sourceLineageTag": "pickup_start_dt",
-            "sourceProviderType": "datetime2",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "dropoff_end_dt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "dateTime",
-            "formatString": "General Date",
-            "lineageTag": "45914fbe-7389-41dc-8926-7f74c6645962",
-            "sourceColumn": "dropoff_end_dt",
-            "sourceLineageTag": "dropoff_end_dt",
-            "sourceProviderType": "datetime2",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "passenger_cnt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "786b5a48-7299-4546-9cf5-3b08fc2284d9",
-            "sourceColumn": "passenger_cnt",
-            "sourceLineageTag": "passenger_cnt",
-            "sourceProviderType": "int",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "trip_distance_num",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "21e7f346-de72-48bc-9952-cd98ef901f5c",
-            "sourceColumn": "trip_distance_num",
-            "sourceLineageTag": "trip_distance_num",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "pick_up_location_id",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "034ebd60-6755-47eb-96cb-fae71c905612",
-            "sourceColumn": "pick_up_location_id",
-            "sourceLineageTag": "pick_up_location_id",
-            "sourceProviderType": "varchar(8000)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "drop_off_location_id",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "e45f5b17-94fa-4337-a5ce-2586a31fc06a",
-            "sourceColumn": "drop_off_location_id",
-            "sourceLineageTag": "drop_off_location_id",
-            "sourceProviderType": "varchar(8000)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "pickup_longitude_num",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "23124f6e-3f5e-4ded-a879-01281d7490ee",
-            "sourceColumn": "pickup_longitude_num",
-            "sourceLineageTag": "pickup_longitude_num",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "pickup_latitude_num",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "d366f544-eb01-451a-aed7-6b711572ce3b",
-            "sourceColumn": "pickup_latitude_num",
-            "sourceLineageTag": "pickup_latitude_num",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "dropoff_longitude_num",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "09fd92bf-14c8-4e6c-ab2b-bc888b0e08d8",
-            "sourceColumn": "dropoff_longitude_num",
-            "sourceLineageTag": "dropoff_longitude_num",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "dropoff_latitude_num",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "2ebbea43-2d40-4941-a831-1a14c22aefce",
-            "sourceColumn": "dropoff_latitude_num",
-            "sourceLineageTag": "dropoff_latitude_num",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "rate_code_id",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "07ad5282-594e-4722-86f0-8979f5e6f2e6",
-            "sourceColumn": "rate_code_id",
-            "sourceLineageTag": "rate_code_id",
-            "sourceProviderType": "int",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "store_and_fwd_flag",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "string",
-            "lineageTag": "2f524ac7-3088-437c-aa44-0a784b69e55a",
-            "sourceColumn": "store_and_fwd_flag",
-            "sourceLineageTag": "store_and_fwd_flag",
-            "sourceProviderType": "varchar(8000)",
-            "summarizeBy": "none"
-          },
-          {
-            "name": "payment_type_cd",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "8c3db9f9-4493-4593-9015-dc469dfcd650",
-            "sourceColumn": "payment_type_cd",
-            "sourceLineageTag": "payment_type_cd",
-            "sourceProviderType": "int",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "fare_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "6a435a83-b4a4-4f8d-91f1-969f8df14fa3",
-            "sourceColumn": "fare_amt",
-            "sourceLineageTag": "fare_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "extra_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "18d26682-8794-4ba4-806e-7dbaa3b35835",
-            "sourceColumn": "extra_amt",
-            "sourceLineageTag": "extra_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "mta_tax_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "91226dfd-2950-434c-80ec-476fc750b2ad",
-            "sourceColumn": "mta_tax_amt",
-            "sourceLineageTag": "mta_tax_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "improvement_surcharge_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "ae88b248-e8fa-4d2b-b910-14635947447b",
-            "sourceColumn": "improvement_surcharge_amt",
-            "sourceLineageTag": "improvement_surcharge_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "tip_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "9caf6f6b-94b3-4196-83cb-13e427fc0a39",
-            "sourceColumn": "tip_amt",
-            "sourceLineageTag": "tip_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "tolls_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "3cf681d3-ab99-40a0-9bb0-50053ae7bb38",
-            "sourceColumn": "tolls_amt",
-            "sourceLineageTag": "tolls_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "ehail_fee_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "27c4c7a6-a986-4da0-b310-0708e0f44af7",
-            "sourceColumn": "ehail_fee_amt",
-            "sourceLineageTag": "ehail_fee_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "total_amt",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "dataType": "double",
-            "lineageTag": "e7c9ca8a-a1d1-4fff-a270-d1784b9bf286",
-            "sourceColumn": "total_amt",
-            "sourceLineageTag": "total_amt",
-            "sourceProviderType": "decimal(20, 4)",
-            "summarizeBy": "sum"
-          },
-          {
-            "name": "trip_type_cd",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "0",
-            "lineageTag": "1f0a4ce8-c864-4288-9017-d0165154d58b",
-            "sourceColumn": "trip_type_cd",
-            "sourceLineageTag": "trip_type_cd",
-            "sourceProviderType": "int",
-            "summarizeBy": "sum"
           },
           {
             "name": "m_updated_at_dttm",
@@ -561,30 +157,420 @@
             ],
             "dataType": "dateTime",
             "formatString": "General Date",
-            "lineageTag": "83fa03f6-37ea-4796-aa21-eaaf165cc59f",
+            "lineageTag": "e8802608-10ec-4e89-9291-45e294c0ed46",
             "sourceColumn": "m_updated_at_dttm",
             "sourceLineageTag": "m_updated_at_dttm",
             "sourceProviderType": "datetime2",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "a31d17b0-3eaf-4c10-93fa-a30fa881eb79",
+        "lineageTag": "cc67f38e-1ec9-4a87-9795-e3ab8899ec82",
         "partitions": [
           {
-            "name": "stg_nyt_ny_taxi_green_demo_client",
+            "name": "dm_dim_store_and_forward",
             "mode": "directLake",
             "source": {
-              "entityName": "stg_nyt_ny_taxi_green_demo_client",
+              "entityName": "dm_dim_store_and_forward",
               "expressionSource": "DatabaseQuery",
-              "schemaName": "dbt_csl_stg",
+              "schemaName": "dbt_csl_dm",
               "type": "entity"
             }
           }
         ],
-        "sourceLineageTag": "[dbt_csl_stg].[stg_nyt_ny_taxi_green_demo_client]"
+        "sourceLineageTag": "[dbt_csl_dm].[dm_dim_store_and_forward]"
       },
       {
-        "name": "dwh_fct_taxi",
+        "name": "dm_dim_payment_type",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "payment_type_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "73ca8f9b-95fa-4783-9d0c-4d899d029ee6",
+            "sourceColumn": "payment_type_id",
+            "sourceLineageTag": "payment_type_id",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "payment_type_desc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "21f3ecb7-8f64-4dbf-97c3-5450b88c5a6b",
+            "sourceColumn": "payment_type_desc",
+            "sourceLineageTag": "payment_type_desc",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "7ff1d93a-0457-4077-bbdc-d6ba87b921a8",
+            "sourceColumn": "m_updated_at_dttm",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "7a7c81e0-aee6-44f8-a73a-8407ba5685e7",
+        "partitions": [
+          {
+            "name": "dm_dim_payment_type",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dm_dim_payment_type",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_dm",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbt_csl_dm].[dm_dim_payment_type]"
+      },
+      {
+        "name": "dm_dim_rate_code",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "rate_code_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2ddff352-c325-484b-b4ca-2efa4b8adb14",
+            "sourceColumn": "rate_code_id",
+            "sourceLineageTag": "rate_code_id",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rate_code_desc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5869928b-bf48-4851-99cc-cc553b21d725",
+            "sourceColumn": "rate_code_desc",
+            "sourceLineageTag": "rate_code_desc",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "a4f1debb-af3b-4691-b658-dcaccea0ee90",
+            "sourceColumn": "m_updated_at_dttm",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e5cdc8ae-2f4e-4921-8395-de7220c04718",
+        "partitions": [
+          {
+            "name": "dm_dim_rate_code",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dm_dim_rate_code",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_dm",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbt_csl_dm].[dm_dim_rate_code]"
+      },
+      {
+        "name": "dm_dim_trip_type",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "trip_type_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "aba18c96-9251-4d92-ab8d-a931db027631",
+            "sourceColumn": "trip_type_id",
+            "sourceLineageTag": "trip_type_id",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "trip_type_desc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ea8186b8-c2e4-4684-961b-d3e562591b6a",
+            "sourceColumn": "trip_type_desc",
+            "sourceLineageTag": "trip_type_desc",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "4217cef8-3141-46a2-8e16-0753a64020fb",
+            "sourceColumn": "m_updated_at_dttm",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "92447fa5-136c-496e-8964-b94e48066cf6",
+        "partitions": [
+          {
+            "name": "dm_dim_trip_type",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dm_dim_trip_type",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_dm",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbt_csl_dm].[dm_dim_trip_type]"
+      },
+      {
+        "name": "dm_dim_vendor_type",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "vendor_type_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "91f71464-a1b1-4253-8ce2-aa0e713b41bc",
+            "sourceColumn": "vendor_type_id",
+            "sourceLineageTag": "vendor_type_id",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "vendor_type_desc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "26257e77-d340-4b49-8fcb-efe299fbabae",
+            "sourceColumn": "vendor_type_desc",
+            "sourceLineageTag": "vendor_type_desc",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "fc906995-09c4-426d-b657-e855c6522361",
+            "sourceColumn": "m_updated_at_dttm",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "ca54c04f-1671-44d8-80a0-2f2365930015",
+        "partitions": [
+          {
+            "name": "dm_dim_vendor_type",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dm_dim_vendor_type",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_dm",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbt_csl_dm].[dm_dim_vendor_type]"
+      },
+      {
+        "name": "dm_dim_taxi_zone",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "location_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "386fce29-1d9d-400f-a2ef-33416df32481",
+            "sourceColumn": "location_id",
+            "sourceLineageTag": "location_id",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "borough_desc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "22f6244c-02b7-483b-bd36-5542d0d725bd",
+            "sourceColumn": "borough_desc",
+            "sourceLineageTag": "borough_desc",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "zone_desc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4999c4f9-9d0d-427f-b3f1-be40af6b4503",
+            "sourceColumn": "zone_desc",
+            "sourceLineageTag": "zone_desc",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "service_zone_desc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e036dd53-3f0a-4a87-9226-7a8ee06e5b70",
+            "sourceColumn": "service_zone_desc",
+            "sourceLineageTag": "service_zone_desc",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "m_updated_at_dttm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "51c139d6-94c0-4fa4-a389-2335a1874487",
+            "sourceColumn": "m_updated_at_dttm",
+            "sourceLineageTag": "m_updated_at_dttm",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e91dd92c-b078-4d54-a7e1-48a643170c1c",
+        "partitions": [
+          {
+            "name": "dm_dim_taxi_zone",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dm_dim_taxi_zone",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbt_csl_dm",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbt_csl_dm].[dm_dim_taxi_zone]"
+      },
+      {
+        "name": "dm_fct_taxi",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -602,7 +588,7 @@
             ],
             "dataType": "dateTime",
             "formatString": "General Date",
-            "lineageTag": "d7e9e8b8-e475-4eba-8c54-776dd905c83e",
+            "lineageTag": "b88c0a26-e513-44cb-96d7-63230741fa87",
             "sourceColumn": "m_valid_dt",
             "sourceLineageTag": "m_valid_dt",
             "sourceProviderType": "date",
@@ -617,7 +603,7 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "87070786-05c7-4c00-94ac-921281afa038",
+            "lineageTag": "92e494cb-a244-49c4-b9c9-4b23d63dc354",
             "sourceColumn": "m_year_num",
             "sourceLineageTag": "m_year_num",
             "sourceProviderType": "varchar(8000)",
@@ -632,7 +618,7 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "e7c3eee5-c1d9-4dd7-9938-5abd28633b1a",
+            "lineageTag": "2507a7b5-2d4c-44f7-8641-c0d2441e6de6",
             "sourceColumn": "m_month_num",
             "sourceLineageTag": "m_month_num",
             "sourceProviderType": "varchar(8000)",
@@ -647,14 +633,14 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "8595a851-6680-4c9d-9873-4490b2ca97e6",
+            "lineageTag": "5f02aaa6-4615-42d6-b628-fffcff25599e",
             "sourceColumn": "m_year_month_num",
             "sourceLineageTag": "m_year_month_num",
             "sourceProviderType": "varchar(8000)",
             "summarizeBy": "none"
           },
           {
-            "name": "vendor_id",
+            "name": "vendor_type_id",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -663,11 +649,11 @@
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "0ffc565a-8588-4d17-8879-e5d3300c3a35",
-            "sourceColumn": "vendor_id",
-            "sourceLineageTag": "vendor_id",
+            "lineageTag": "a6ba5b62-632a-4ea3-94fe-74aa51651736",
+            "sourceColumn": "vendor_type_id",
+            "sourceLineageTag": "vendor_type_id",
             "sourceProviderType": "int",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "pickup_start_dt",
@@ -679,7 +665,7 @@
             ],
             "dataType": "dateTime",
             "formatString": "General Date",
-            "lineageTag": "3b1fb58a-b410-4ced-816c-06c8de5f9290",
+            "lineageTag": "7bc1029d-d9d2-4e38-a4bf-ab52140cb799",
             "sourceColumn": "pickup_start_dt",
             "sourceLineageTag": "pickup_start_dt",
             "sourceProviderType": "datetime2",
@@ -695,7 +681,7 @@
             ],
             "dataType": "dateTime",
             "formatString": "General Date",
-            "lineageTag": "8691f66d-c0bf-4d1e-8d4e-285895afc98d",
+            "lineageTag": "b7e3fb8e-68aa-45f2-9d5c-cb31fadeacac",
             "sourceColumn": "dropoff_end_dt",
             "sourceLineageTag": "dropoff_end_dt",
             "sourceProviderType": "datetime2",
@@ -711,7 +697,7 @@
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "0d42e9db-1e75-4ce9-acb8-e527b752536d",
+            "lineageTag": "e8cb8ef3-2bbc-4d89-b5fc-a22d030f55d0",
             "sourceColumn": "passenger_cnt",
             "sourceLineageTag": "passenger_cnt",
             "sourceProviderType": "int",
@@ -730,7 +716,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "15849608-bd09-4456-83f4-54e0561f55f8",
+            "lineageTag": "3557cd83-bcc4-40c6-9eda-3d6971850a65",
             "sourceColumn": "trip_distance_num",
             "sourceLineageTag": "trip_distance_num",
             "sourceProviderType": "decimal(20, 4)",
@@ -744,12 +730,13 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
-            "lineageTag": "4475d1e5-9d8a-4002-b715-44fcefae51bd",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bb62e67b-a3f9-461b-afa5-31a4eccae768",
             "sourceColumn": "pick_up_location_id",
             "sourceLineageTag": "pick_up_location_id",
-            "sourceProviderType": "varchar(8000)",
-            "summarizeBy": "none"
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
           },
           {
             "name": "drop_off_location_id",
@@ -759,12 +746,13 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
-            "lineageTag": "e0f72b57-fe7a-4fdc-b539-137620095aec",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ab7ff73a-5e53-4f5d-989d-b3fb7534dcd6",
             "sourceColumn": "drop_off_location_id",
             "sourceLineageTag": "drop_off_location_id",
-            "sourceProviderType": "varchar(8000)",
-            "summarizeBy": "none"
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
           },
           {
             "name": "pickup_longitude_num",
@@ -779,7 +767,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "4e0b5e30-f9cf-458f-ae5d-658a4fd60d1a",
+            "lineageTag": "13228a2a-2c05-4dd6-988a-750f45bddea0",
             "sourceColumn": "pickup_longitude_num",
             "sourceLineageTag": "pickup_longitude_num",
             "sourceProviderType": "decimal(20, 4)",
@@ -798,7 +786,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "ac2cfd87-b787-4233-b1b2-247ac0d23916",
+            "lineageTag": "4f34298d-aa35-43f7-bc94-6a4995fbf446",
             "sourceColumn": "pickup_latitude_num",
             "sourceLineageTag": "pickup_latitude_num",
             "sourceProviderType": "decimal(20, 4)",
@@ -817,7 +805,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "73080ab1-4a13-48ff-88dd-343f07c85b41",
+            "lineageTag": "34c281ba-4b16-4ed6-9976-d8e1ed86b12f",
             "sourceColumn": "dropoff_longitude_num",
             "sourceLineageTag": "dropoff_longitude_num",
             "sourceProviderType": "decimal(20, 4)",
@@ -836,7 +824,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "8910d1e3-d2dd-47d2-9943-bb9e314d97f9",
+            "lineageTag": "3c5e59e6-0410-43b0-a16a-2c5964d77d08",
             "sourceColumn": "dropoff_latitude_num",
             "sourceLineageTag": "dropoff_latitude_num",
             "sourceProviderType": "decimal(20, 4)",
@@ -852,11 +840,11 @@
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "d9451a9f-92a6-49f0-9ab9-bf470798aed4",
+            "lineageTag": "4e0c4428-e4fa-41af-ac36-aa38294af5bd",
             "sourceColumn": "rate_code_id",
             "sourceLineageTag": "rate_code_id",
             "sourceProviderType": "int",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "store_and_fwd_flag",
@@ -867,14 +855,14 @@
               }
             ],
             "dataType": "string",
-            "lineageTag": "503cdd33-1239-4ed5-b334-1f2e8c974e1e",
+            "lineageTag": "c62e10bb-9303-4e4a-8d66-3b28d9c5035b",
             "sourceColumn": "store_and_fwd_flag",
             "sourceLineageTag": "store_and_fwd_flag",
             "sourceProviderType": "varchar(8000)",
             "summarizeBy": "none"
           },
           {
-            "name": "payment_type_cd",
+            "name": "payment_type_id",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -883,11 +871,11 @@
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "d19d83d1-66a5-4876-b8c1-34ff17536d23",
-            "sourceColumn": "payment_type_cd",
-            "sourceLineageTag": "payment_type_cd",
+            "lineageTag": "597ea681-e82a-42e9-976e-42d343101f35",
+            "sourceColumn": "payment_type_id",
+            "sourceLineageTag": "payment_type_id",
             "sourceProviderType": "int",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "fare_amt",
@@ -902,7 +890,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "13d285d6-5298-406e-b76b-6753d1602745",
+            "lineageTag": "68d92917-6805-41d1-915b-1ec97c927d42",
             "sourceColumn": "fare_amt",
             "sourceLineageTag": "fare_amt",
             "sourceProviderType": "decimal(20, 4)",
@@ -921,7 +909,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "aa8009e1-2d5e-4322-80d1-09c598b476f4",
+            "lineageTag": "2694dd14-d3d0-494e-819e-8ebb35aae73d",
             "sourceColumn": "extra_amt",
             "sourceLineageTag": "extra_amt",
             "sourceProviderType": "decimal(20, 4)",
@@ -940,7 +928,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "36e60cfd-db21-4840-980e-0ad2c86b9af8",
+            "lineageTag": "fd7e1a69-eddb-447b-9202-43eba84893db",
             "sourceColumn": "mta_tax_amt",
             "sourceLineageTag": "mta_tax_amt",
             "sourceProviderType": "decimal(20, 4)",
@@ -959,7 +947,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "af1d541e-520c-4741-b0a5-b59f59049753",
+            "lineageTag": "17181ca2-0169-4025-a0ca-dd3aefab494c",
             "sourceColumn": "improvement_surcharge_amt",
             "sourceLineageTag": "improvement_surcharge_amt",
             "sourceProviderType": "decimal(20, 4)",
@@ -978,7 +966,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "929350b9-c591-4f62-a60a-5fefaaf50549",
+            "lineageTag": "dfcecdc6-511a-4dfb-aa1d-a253a1d34aff",
             "sourceColumn": "tip_amt",
             "sourceLineageTag": "tip_amt",
             "sourceProviderType": "decimal(20, 4)",
@@ -997,7 +985,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "fc65d31e-c638-48fd-aaa3-967dc77589c3",
+            "lineageTag": "2ee62d8d-674d-434e-be3e-3a40e2de1dea",
             "sourceColumn": "tolls_amt",
             "sourceLineageTag": "tolls_amt",
             "sourceProviderType": "decimal(20, 4)",
@@ -1016,7 +1004,7 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "96f92379-062b-4484-9adf-d6216a2de374",
+            "lineageTag": "4a0d77e9-0383-47ac-a87e-4359c35633b4",
             "sourceColumn": "ehail_fee_amt",
             "sourceLineageTag": "ehail_fee_amt",
             "sourceProviderType": "decimal(20, 4)",
@@ -1035,14 +1023,14 @@
               }
             ],
             "dataType": "double",
-            "lineageTag": "4254a6f9-d851-46d8-a0eb-b93bce70340a",
+            "lineageTag": "08f0fd96-f8cd-4e2f-b075-f9775573bb29",
             "sourceColumn": "total_amt",
             "sourceLineageTag": "total_amt",
             "sourceProviderType": "decimal(20, 4)",
             "summarizeBy": "sum"
           },
           {
-            "name": "trip_type_cd",
+            "name": "trip_type_id",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1051,11 +1039,11 @@
             ],
             "dataType": "int64",
             "formatString": "0",
-            "lineageTag": "9575e6ad-9fad-4b56-a8af-3a3c9a2ca4fc",
-            "sourceColumn": "trip_type_cd",
-            "sourceLineageTag": "trip_type_cd",
+            "lineageTag": "0c6be2ca-314e-4d99-a00d-1b25eaf02384",
+            "sourceColumn": "trip_type_id",
+            "sourceLineageTag": "trip_type_id",
             "sourceProviderType": "int",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "m_updated_at_dttm",
@@ -1067,27 +1055,27 @@
             ],
             "dataType": "dateTime",
             "formatString": "General Date",
-            "lineageTag": "5be323f7-edd2-4b16-b998-e193374a99fc",
+            "lineageTag": "f5cacc02-4904-4b75-ba60-2e55db558b52",
             "sourceColumn": "m_updated_at_dttm",
             "sourceLineageTag": "m_updated_at_dttm",
             "sourceProviderType": "datetime2",
             "summarizeBy": "none"
           }
         ],
-        "lineageTag": "a80c3657-a76c-4ca7-b7ef-696dcd5fe801",
+        "lineageTag": "ff16aae6-03c7-42fc-be1a-9ad842448b1a",
         "partitions": [
           {
-            "name": "dwh_fct_taxi",
+            "name": "dm_fct_taxi",
             "mode": "directLake",
             "source": {
-              "entityName": "dwh_fct_taxi",
+              "entityName": "dm_fct_taxi",
               "expressionSource": "DatabaseQuery",
-              "schemaName": "dbt_csl_dwh",
+              "schemaName": "dbt_csl_dm",
               "type": "entity"
             }
           }
         ],
-        "sourceLineageTag": "[dbt_csl_dwh].[dwh_fct_taxi]"
+        "sourceLineageTag": "[dbt_csl_dm].[dm_fct_taxi]"
       }
     ]
   }

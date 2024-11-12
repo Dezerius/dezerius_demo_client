@@ -1,0 +1,281 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "7981366e-ce86-4268-aea5-a768bb7c635f",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_source_sytem_cd": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_subfolder_path": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_in_table_name": {
+              "value": "ny_taxi_green_demo_client",
+              "type": "string"
+            },
+            "p_lakehouse_name": {
+              "value": "lh_dezerius_demo_client",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create table - ny_taxi_green_demo_client",
+        "dependsOn": [
+          {
+            "activity": "Create table - NYTGreenRateCodeDim",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Create table - NYTGreenPaymentTypeDim",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Create table - NYTGreenStoreAndForwardDim",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Create table - NYTGreenTripTypeDim",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Create table - NYTGreenVendorTypeDim",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Create table - NYTGreenTaxiZoneLookup",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a6332ca1-34c2-48a3-807a-140c384c1fd6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_source_sytem_cd": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_subfolder_path": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_in_table_name": {
+              "value": "NYTGreenPaymentTypeDim",
+              "type": "string"
+            },
+            "p_lakehouse_name": {
+              "value": "lh_dezerius_demo_client",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create table - NYTGreenPaymentTypeDim",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a6332ca1-34c2-48a3-807a-140c384c1fd6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_source_sytem_cd": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_subfolder_path": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_in_table_name": {
+              "value": "NYTGreenRateCodeDim",
+              "type": "string"
+            },
+            "p_lakehouse_name": {
+              "value": "lh_dezerius_demo_client",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create table - NYTGreenRateCodeDim",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a6332ca1-34c2-48a3-807a-140c384c1fd6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_source_sytem_cd": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_subfolder_path": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_in_table_name": {
+              "value": "NYTGreenStoreAndForwardDim",
+              "type": "string"
+            },
+            "p_lakehouse_name": {
+              "value": "lh_dezerius_demo_client",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create table - NYTGreenStoreAndForwardDim",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a6332ca1-34c2-48a3-807a-140c384c1fd6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_source_sytem_cd": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_subfolder_path": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_in_table_name": {
+              "value": "NYTGreenTripTypeDim",
+              "type": "string"
+            },
+            "p_lakehouse_name": {
+              "value": "lh_dezerius_demo_client",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create table - NYTGreenTripTypeDim",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a6332ca1-34c2-48a3-807a-140c384c1fd6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_source_sytem_cd": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_subfolder_path": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_in_table_name": {
+              "value": "NYTGreenVendorTypeDim",
+              "type": "string"
+            },
+            "p_lakehouse_name": {
+              "value": "lh_dezerius_demo_client",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create table - NYTGreenVendorTypeDim",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a6332ca1-34c2-48a3-807a-140c384c1fd6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_source_sytem_cd": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_subfolder_path": {
+              "value": "NYT",
+              "type": "string"
+            },
+            "p_in_table_name": {
+              "value": "NYTGreenTaxiZoneLookup",
+              "type": "string"
+            },
+            "p_lakehouse_name": {
+              "value": "lh_dezerius_demo_client",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create table - NYTGreenTaxiZoneLookup",
+        "dependsOn": []
+      }
+    ]
+  }
+}

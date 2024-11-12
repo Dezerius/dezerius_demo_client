@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SemanticModel",
-    "displayName": "sm_dezerius_demo_client"
+    "type": "DataPipeline",
+    "displayName": "pl_dezerius_demo_client_create_delta"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "be256e9c-e994-4bfc-8627-ab03bd4ce556"
+    "logicalId": "4bd9e6da-aea5-4ce2-8cf9-06241417677b"
   }
 }
