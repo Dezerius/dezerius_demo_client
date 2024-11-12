@@ -27,26 +27,26 @@
               },
               "schema": [],
               "linkedService": {
+                "name": "nyc_taxi_green",
                 "properties": {
                   "type": "AzureBlobStorage",
                   "typeProperties": {
                     "authenticationType": "Anonymous",
                     "containerUri": "https://azureopendatastorage.blob.core.windows.net/nyctlc"
                   }
-                },
-                "name": "nyc_taxi_green"
+                }
               },
               "annotations": []
             }
           },
           "sink": {
             "type": "ParquetSink",
-            "storeSettings": {
-              "type": "LakehouseWriteSettings"
-            },
             "formatSettings": {
               "type": "ParquetWriteSettings",
               "enableVertiParquet": false
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
             },
             "datasetSettings": {
               "type": "Parquet",
@@ -59,6 +59,7 @@
               },
               "schema": [],
               "linkedService": {
+                "name": "lh_dezerius_demo_client",
                 "properties": {
                   "type": "Lakehouse",
                   "typeProperties": {
@@ -67,8 +68,7 @@
                     "rootFolder": "Files"
                   },
                   "annotations": []
-                },
-                "name": "dezerius_demo_client_lh"
+                }
               },
               "annotations": []
             }
@@ -90,8 +90,7 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Copy data from sample data to Lakehouse file",
-        "description": "Use this template to copy data from sample data (NYC Taxi - Green) to specified file folders in Lakehouse.",
+        "name": "Copy NYT Green data",
         "dependsOn": []
       }
     ]
