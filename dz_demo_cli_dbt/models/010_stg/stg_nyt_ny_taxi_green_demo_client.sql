@@ -15,7 +15,7 @@ SELECT
     ,CAST([dropoffLongitude] AS DECIMAL({{var('decimal_precision')}}, {{var('decimal_scale')}})) as dropoff_longitude_num
     ,CAST([dropoffLatitude] AS DECIMAL({{var('decimal_precision')}}, {{var('decimal_scale')}})) as dropoff_latitude_num
     ,CAST([rateCodeID] AS INT) as rate_code_id
-    ,[storeAndFwdFlag] as store_and_fwd_flag
+    ,[storeAndFwdFlag] as store_and_fwd_flg
     ,CAST([paymentType] AS INT) as payment_type_id
     ,CAST([fareAmount] AS DECIMAL({{var('decimal_precision')}}, {{var('decimal_scale')}})) as fare_amt
     ,CAST([extra] AS DECIMAL({{var('decimal_precision')}}, {{var('decimal_scale')}})) as extra_amt
