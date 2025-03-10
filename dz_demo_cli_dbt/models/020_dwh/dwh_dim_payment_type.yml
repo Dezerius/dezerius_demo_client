@@ -1,0 +1,39 @@
+models:
+  - name: dwh_dim_payment_type
+    description: The dwh_dim_payment_type model is a dimension table in the data
+      warehouse that contains information about different payment types. It is
+      derived from the stg_nyt_nytgreenpaymenttypedim staging table. The model
+      includes a primary key column 'payment_type_pk' which is a hashed value
+      generated from the 'payment_type_id' column. If the 'payment_type_id' is
+      null, a default value '_dbt_utils_surrogate_key_null_' is used for
+      hashing.
+    columns:
+      - name: payment_type_id
+        description: This is an integer column that uniquely identifies the type of
+          payment. It is derived from the source table
+          stg_nyt_nytgreenpaymenttypedim in the dw_dezerius_demo_client
+          database.
+        data_type: int
+        quote: true
+      - name: payment_type_desc
+        description: This column contains the description of the payment type. It is a
+          variable character field that provides more details about the payment
+          method used.
+        data_type: varchar
+        quote: true
+      - name: m_updated_at_dttm
+        description: This column represents the date and time when the payment type
+          record was last updated in the data warehouse. It is of datetime2 data
+          type.
+        data_type: datetime2
+        quote: true
+      - name: payment_type_pk
+        description: This column is a primary key for the payment type. It is generated
+          by hashing the payment_type_id column using the MD5 algorithm. If the
+          payment_type_id is null, a default value
+          '_dbt_utils_surrogate_key_null_' is used. The result is then converted
+          to a lower case string.
+        data_type: varchar
+        tests:
+          - unique
+        quote: true
