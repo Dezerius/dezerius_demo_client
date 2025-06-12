@@ -1,0 +1,29 @@
+relationship 366759ab-73bb-cae2-9624-2720beeaf632
+	fromColumn: dm_fct_taxi.vendor_type_id
+	toColumn: dm_dim_vendor_type.vendor_type_id
+
+relationship 6d5ba0be-60cc-a1f1-97b7-cf90eb216d73
+	fromColumn: dm_fct_taxi.trip_type_id
+	toColumn: dm_dim_trip_type.trip_type_id
+
+relationship 4a8261b9-478d-ce97-d6b7-a8fe4225f8a7
+	fromColumn: dm_fct_taxi.store_and_fwd_flag
+	toColumn: dm_dim_store_and_forward.store_and_fwd_flg
+
+relationship 1dc22951-549b-96ba-c2a9-420cf0fcaef2
+	fromColumn: dm_fct_taxi.rate_code_id
+	toColumn: dm_dim_rate_code.rate_code_id
+
+relationship a967ed67-746c-e580-91a7-862d3d0efc9b
+	fromColumn: dm_fct_taxi.payment_type_id
+	toColumn: dm_dim_payment_type.payment_type_id
+
+relationship ae5881cc-4c82-7692-b2a2-bbfbabe92ae3
+	fromColumn: dm_fct_taxi.pick_up_location_id
+	toColumn: dm_dim_taxi_zone.location_id
+
+relationship 5969bcae-096e-f615-f768-3753f72beb3c
+	isActive: false
+	fromColumn: dm_fct_taxi.drop_off_location_id
+	toColumn: dm_dim_taxi_zone.location_id
+

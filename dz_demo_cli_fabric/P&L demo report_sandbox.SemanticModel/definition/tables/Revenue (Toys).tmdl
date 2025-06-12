@@ -1,0 +1,26 @@
+table 'Revenue (Toys)'
+	lineageTag: e64b5d2b-6857-45fb-90d2-3082bdc5cf86
+
+	measure 'Revenue (Toys) Value' = SELECTEDVALUE('Revenue (Toys)'[Revenue (Toys)])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0312db16-097c-41b4-a537-721329ad9189
+
+	column 'Revenue (Toys)'
+		formatString: 0%;-0%;0%
+		lineageTag: af7d6884-33df-443e-9cde-75f2abde86e1
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Revenue (Toys)' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = fb0d478cb5e74a579a831419a7df06ee
+

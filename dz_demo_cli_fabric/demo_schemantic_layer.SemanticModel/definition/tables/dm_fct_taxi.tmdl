@@ -1,0 +1,330 @@
+table dm_fct_taxi
+	lineageTag: ff16aae6-03c7-42fc-be1a-9ad842448b1a
+	sourceLineageTag: [dbt_csl_dm].[dm_fct_taxi]
+
+	column m_valid_dt
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: b88c0a26-e513-44cb-96d7-63230741fa87
+		sourceLineageTag: m_valid_dt
+		summarizeBy: none
+		sourceColumn: m_valid_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_year_num
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 92e494cb-a244-49c4-b9c9-4b23d63dc354
+		sourceLineageTag: m_year_num
+		summarizeBy: none
+		sourceColumn: m_year_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_month_num
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2507a7b5-2d4c-44f7-8641-c0d2441e6de6
+		sourceLineageTag: m_month_num
+		summarizeBy: none
+		sourceColumn: m_month_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_year_month_num
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5f02aaa6-4615-42d6-b628-fffcff25599e
+		sourceLineageTag: m_year_month_num
+		summarizeBy: none
+		sourceColumn: m_year_month_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendor_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a6ba5b62-632a-4ea3-94fe-74aa51651736
+		sourceLineageTag: vendor_type_id
+		summarizeBy: none
+		sourceColumn: vendor_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pickup_start_dt
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7bc1029d-d9d2-4e38-a4bf-ab52140cb799
+		sourceLineageTag: pickup_start_dt
+		summarizeBy: none
+		sourceColumn: pickup_start_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column dropoff_end_dt
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b7e3fb8e-68aa-45f2-9d5c-cb31fadeacac
+		sourceLineageTag: dropoff_end_dt
+		summarizeBy: none
+		sourceColumn: dropoff_end_dt
+
+		annotation SummarizationSetBy = Automatic
+
+	column passenger_cnt
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e8cb8ef3-2bbc-4d89-b5fc-a22d030f55d0
+		sourceLineageTag: passenger_cnt
+		summarizeBy: sum
+		sourceColumn: passenger_cnt
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_distance_num
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 3557cd83-bcc4-40c6-9eda-3d6971850a65
+		sourceLineageTag: trip_distance_num
+		summarizeBy: sum
+		sourceColumn: trip_distance_num
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pick_up_location_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bb62e67b-a3f9-461b-afa5-31a4eccae768
+		sourceLineageTag: pick_up_location_id
+		summarizeBy: none
+		sourceColumn: pick_up_location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column drop_off_location_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ab7ff73a-5e53-4f5d-989d-b3fb7534dcd6
+		sourceLineageTag: drop_off_location_id
+		summarizeBy: sum
+		sourceColumn: drop_off_location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pickup_longitude_num
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 13228a2a-2c05-4dd6-988a-750f45bddea0
+		sourceLineageTag: pickup_longitude_num
+		summarizeBy: sum
+		sourceColumn: pickup_longitude_num
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pickup_latitude_num
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 4f34298d-aa35-43f7-bc94-6a4995fbf446
+		sourceLineageTag: pickup_latitude_num
+		summarizeBy: sum
+		sourceColumn: pickup_latitude_num
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dropoff_longitude_num
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 34c281ba-4b16-4ed6-9976-d8e1ed86b12f
+		sourceLineageTag: dropoff_longitude_num
+		summarizeBy: sum
+		sourceColumn: dropoff_longitude_num
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dropoff_latitude_num
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 3c5e59e6-0410-43b0-a16a-2c5964d77d08
+		sourceLineageTag: dropoff_latitude_num
+		summarizeBy: sum
+		sourceColumn: dropoff_latitude_num
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rate_code_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4e0c4428-e4fa-41af-ac36-aa38294af5bd
+		sourceLineageTag: rate_code_id
+		summarizeBy: none
+		sourceColumn: rate_code_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_and_fwd_flag
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c62e10bb-9303-4e4a-8d66-3b28d9c5035b
+		sourceLineageTag: store_and_fwd_flag
+		summarizeBy: none
+		sourceColumn: store_and_fwd_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 597ea681-e82a-42e9-976e-42d343101f35
+		sourceLineageTag: payment_type_id
+		summarizeBy: none
+		sourceColumn: payment_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fare_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 68d92917-6805-41d1-915b-1ec97c927d42
+		sourceLineageTag: fare_amt
+		summarizeBy: sum
+		sourceColumn: fare_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column extra_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 2694dd14-d3d0-494e-819e-8ebb35aae73d
+		sourceLineageTag: extra_amt
+		summarizeBy: sum
+		sourceColumn: extra_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mta_tax_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: fd7e1a69-eddb-447b-9202-43eba84893db
+		sourceLineageTag: mta_tax_amt
+		summarizeBy: sum
+		sourceColumn: mta_tax_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column improvement_surcharge_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 17181ca2-0169-4025-a0ca-dd3aefab494c
+		sourceLineageTag: improvement_surcharge_amt
+		summarizeBy: sum
+		sourceColumn: improvement_surcharge_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tip_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: dfcecdc6-511a-4dfb-aa1d-a253a1d34aff
+		sourceLineageTag: tip_amt
+		summarizeBy: sum
+		sourceColumn: tip_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tolls_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 2ee62d8d-674d-434e-be3e-3a40e2de1dea
+		sourceLineageTag: tolls_amt
+		summarizeBy: sum
+		sourceColumn: tolls_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ehail_fee_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 4a0d77e9-0383-47ac-a87e-4359c35633b4
+		sourceLineageTag: ehail_fee_amt
+		summarizeBy: sum
+		sourceColumn: ehail_fee_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_amt
+		dataType: double
+		sourceProviderType: decimal(20, 4)
+		lineageTag: 08f0fd96-f8cd-4e2f-b075-f9775573bb29
+		sourceLineageTag: total_amt
+		summarizeBy: sum
+		sourceColumn: total_amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trip_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0c6be2ca-314e-4d99-a00d-1b25eaf02384
+		sourceLineageTag: trip_type_id
+		summarizeBy: none
+		sourceColumn: trip_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_updated_at_dttm
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f5cacc02-4904-4b75-ba60-2e55db558b52
+		sourceLineageTag: m_updated_at_dttm
+		summarizeBy: none
+		sourceColumn: m_updated_at_dttm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dm_fct_taxi = entity
+		mode: directLake
+		source
+			entityName: dm_fct_taxi
+			schemaName: dbt_csl_dm
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

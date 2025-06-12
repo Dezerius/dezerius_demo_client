@@ -1,0 +1,27 @@
+table 'Salaries and Wages'
+	lineageTag: c1805980-528c-4ea5-b5e7-532f392d4d96
+
+	measure 'Salaries and Wages Value' = SELECTEDVALUE('Salaries and Wages'[Salaries and Wages])
+		lineageTag: c642e306-03c2-43cf-9d71-6e3ab021f148
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Salaries and Wages'
+		formatString: 0%;-0%;0%
+		lineageTag: 54f8b808-a3cd-4e49-9f5c-d4f895c15de5
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Salaries and Wages' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = 93bb602416494b01b624da3d136ae764
+

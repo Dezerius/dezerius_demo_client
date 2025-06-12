@@ -1,0 +1,27 @@
+table 'Manufacturing Overhead'
+	lineageTag: 744fcf9c-071c-4bd8-bb33-45249e467569
+
+	measure 'Manufacturing Overhead Value' = SELECTEDVALUE('Manufacturing Overhead'[Manufacturing Overhead])
+		lineageTag: 432aee13-4ace-486e-b215-ccd2d143be81
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Manufacturing Overhead'
+		formatString: 0%;-0%;0%
+		lineageTag: 7d974991-d10d-49e3-9dac-0304998f4e97
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Manufacturing Overhead' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = 526fcfc7e7f949269a50dcae5fc2690e
+

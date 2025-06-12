@@ -1,0 +1,27 @@
+table 'Sales Revenue (Licensed Products)'
+	lineageTag: b5ad1851-143d-4a5b-a880-e6a3d1ce78ed
+
+	measure 'Sales Revenue (Licensed Products) Value' = SELECTEDVALUE('Sales Revenue (Licensed Products)'[Revenue (Licensed Products)])
+		lineageTag: cbb726fb-781a-4929-9286-9f8c9b7b1305
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Revenue (Licensed Products)'
+		formatString: 0%;-0%;0%
+		lineageTag: 140e613a-1262-4b38-a8ba-85e68226beb8
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Revenue (Licensed Products)' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = d9b2d090f2f04dcba7af51c59bdbefe2
+

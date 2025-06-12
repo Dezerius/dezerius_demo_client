@@ -29,4 +29,3 @@ CREATE TABLE [dbt_csl_dm].[dm_fct_taxi] (
 	[trip_type_id] int NULL, 
 	[m_updated_at_dttm] datetime2(6) NULL
 );
-

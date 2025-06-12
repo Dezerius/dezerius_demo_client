@@ -1,0 +1,27 @@
+table 'Direct Labor'
+	lineageTag: 5d238dde-4098-4c71-b428-af521f541e91
+
+	measure 'Direct Labor Value' = SELECTEDVALUE('Direct Labor'[Direct Labor])
+		lineageTag: de2be88e-7555-45ad-80f8-181cf6c9a1af
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Direct Labor'
+		formatString: 0%;-0%;0%
+		lineageTag: 8c1b843d-f08c-4d09-83de-668cdb2bf785
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Direct Labor' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = 99dd08ca2f224eb78c9e101a5532bbb3
+

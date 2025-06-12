@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.142.7627.5 (Main)+9a3144321c8b5462ab194cda892c20b7d6327609
+
+annotation PBI_QueryOrder = ["DatabaseQuery"]
+
+annotation PBI_ProTooling = ["WebModelingEdit"]
+
+annotation __PBIService_Versioning_SaveVersion = d24bcb3f-2157-4a82-9f0e-8b699b165bf6
+
+ref table dm_dim_store_and_forward
+ref table dm_dim_payment_type
+ref table dm_dim_rate_code
+ref table dm_dim_trip_type
+ref table dm_dim_vendor_type
+ref table dm_dim_taxi_zone
+ref table dm_fct_taxi
+
+ref cultureInfo en-US
+

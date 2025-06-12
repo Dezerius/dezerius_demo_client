@@ -1,0 +1,45 @@
+table dm_dim_trip_type
+	lineageTag: 92447fa5-136c-496e-8964-b94e48066cf6
+	sourceLineageTag: [dbt_csl_dm].[dm_dim_trip_type]
+
+	column trip_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: aba18c96-9251-4d92-ab8d-a931db027631
+		sourceLineageTag: trip_type_id
+		summarizeBy: none
+		sourceColumn: trip_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_type_desc
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ea8186b8-c2e4-4684-961b-d3e562591b6a
+		sourceLineageTag: trip_type_desc
+		summarizeBy: none
+		sourceColumn: trip_type_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_updated_at_dttm
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 4217cef8-3141-46a2-8e16-0753a64020fb
+		sourceLineageTag: m_updated_at_dttm
+		summarizeBy: none
+		sourceColumn: m_updated_at_dttm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dm_dim_trip_type = entity
+		mode: directLake
+		source
+			entityName: dm_dim_trip_type
+			schemaName: dbt_csl_dm
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

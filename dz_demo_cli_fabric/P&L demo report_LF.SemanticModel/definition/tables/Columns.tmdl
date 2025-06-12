@@ -1,0 +1,49 @@
+table Columns
+	lineageTag: 77170715-fe0d-416f-ac4c-858e99570a0f
+
+	column Columns
+		lineageTag: 6c82dcec-f4c0-4ace-8270-3723fc4e9bc3
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Columns Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Columns Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Columns Fields'
+		isHidden
+		lineageTag: a5c78dc3-d031-4785-8791-82c6a8bc3ec9
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Columns Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Columns Order'
+		isHidden
+		formatString: 0
+		lineageTag: d94d36da-c26c-481a-b87a-299047c908e8
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Columns = calculated
+		mode: import
+		source =
+				{
+				    ("P & L", NAMEOF('Calculations'[P & L items]), 0),
+				    ("Budget", NAMEOF('Calculations'[Budget items]), 1),
+				    ("Variance", NAMEOF('Calculations'[Variance items]), 2)
+				}
+
+	annotation PBI_Id = 2178e54a3afa41f49bf76a86611319c3
+

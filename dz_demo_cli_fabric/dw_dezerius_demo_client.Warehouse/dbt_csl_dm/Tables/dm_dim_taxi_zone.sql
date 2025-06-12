@@ -6,4 +6,3 @@ CREATE TABLE [dbt_csl_dm].[dm_dim_taxi_zone] (
 	[service_zone_desc] varchar(8000) NULL, 
 	[m_updated_at_dttm] datetime2(6) NULL
 );
-

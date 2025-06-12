@@ -1,0 +1,27 @@
+table 'Rent and Utilities'
+	lineageTag: 2d2fac75-3b47-474c-94af-33a55f9d33a5
+
+	measure 'Rent and Utilities Value' = SELECTEDVALUE('Rent and Utilities'[Rent and Utilities])
+		lineageTag: e8f02f19-9864-49aa-a8f7-9b765f112d6e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Rent and Utilities'
+		formatString: 0%;-0%;0%
+		lineageTag: d9e196e0-a703-4d27-a66b-a9361feada64
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Rent and Utilities' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = c741e9d7da1d4056a93518abb4e7b6a1
+

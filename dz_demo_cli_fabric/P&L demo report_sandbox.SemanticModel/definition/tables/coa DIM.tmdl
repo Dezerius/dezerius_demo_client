@@ -1,0 +1,156 @@
+table 'coa DIM'
+	lineageTag: e422e0e9-1b48-46fe-af15-d2c0bfacfc81
+
+	column 'Account Index'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5bc33789-3335-4fcc-91c9-c680bea8b177
+		summarizeBy: sum
+		sourceColumn: Account Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Reference'
+		dataType: string
+		lineageTag: ad52bdb5-a090-449b-9f31-bdb5ed8c219c
+		summarizeBy: none
+		sourceColumn: Account Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account
+		dataType: string
+		lineageTag: 82065e50-3fcf-44d4-aa29-219ce1a18183
+		summarizeBy: none
+		sourceColumn: Account
+		sortByColumn: 'Account Index'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calculation Rule'
+		dataType: string
+		lineageTag: 5d381824-64f6-46ce-8a3e-90df97c6905e
+		summarizeBy: none
+		sourceColumn: Calculation Rule
+
+		annotation SummarizationSetBy = Automatic
+
+	column L1
+		dataType: string
+		lineageTag: 22c56984-3f10-46dd-870f-968787e01723
+		summarizeBy: none
+		sourceColumn: L1
+		sortByColumn: 'L1 Index'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column L2
+		dataType: string
+		lineageTag: 18e03d92-dacf-4137-aac2-58714ec82417
+		summarizeBy: none
+		sourceColumn: L2
+		sortByColumn: 'L2 Index'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column L3
+		dataType: string
+		lineageTag: 886d8eec-9cb7-44e7-a303-3c6cc7c51e39
+		summarizeBy: none
+		sourceColumn: L3
+		sortByColumn: 'L3 Index'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Level'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f8e907b-4391-4c14-aa92-b8dc6d638d8a
+		summarizeBy: sum
+		sourceColumn: Account Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Highlight Group'
+		dataType: int64
+		formatString: 0
+		lineageTag: f62de6a4-e8e6-427a-8106-14c03adc3f33
+		summarizeBy: sum
+		sourceColumn: Highlight Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L1 Index'
+		dataType: int64
+		formatString: 0
+		lineageTag: e01064f7-3fa0-4317-8a10-6bcc62d9908e
+		summarizeBy: sum
+		sourceColumn: L1 Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L2 Index'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ed6c686-b2bc-430a-939b-22abd573ee35
+		summarizeBy: sum
+		sourceColumn: L2 Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L3 Index'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8841b7cb-69f1-4e98-9b02-cdff5e9ee57d
+		summarizeBy: sum
+		sourceColumn: L3 Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: fc027054-4f7e-49bc-95ce-5c43bcd116cf
+		summarizeBy: none
+		sourceColumn: Account ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L1 short'
+		dataType: string
+		lineageTag: 6183a2a6-51f1-4563-96e3-4689114951fe
+		summarizeBy: none
+		sourceColumn: L1 short
+		sortByColumn: 'L1 Index'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'coa DIM' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("xe6b73af6wce5cpkwv3dpk3vzi-d3eexxnlcfeuvekhkfenm33jbm.datawarehouse.fabric.microsoft.com"),
+				    dw_dezerius_demo_client = Source{[Name="dw_dezerius_demo_client"]}[Data],
+				    dbo_COA = dw_dezerius_demo_client{[Schema="dbo",Item="COA"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dbo_COA,{{"Account Index", Int64.Type}, {"Account Reference", type text}, {"Account", type text}, {"Calculation Rule", type text}, {"L1", type text}, {"L2", type text}, {"L3", type text}, {"L4", type text}, {"Account Level", Int64.Type}, {"Highlight Group", Int64.Type}, {"L1 Index", Int64.Type}, {"L2 Index", Int64.Type}, {"L3 Index", Int64.Type}, {"L4 Index", Int64.Type}}),
+				     #"Added Custom" = Table.AddColumn(#"Changed Type", "Account ID", each if Value.Is(Value.FromText(Text.Start([Account],6)), type number) then Text.Start([Account],6) else [Account Index]),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added Custom",".","",Replacer.ReplaceValue,{"Account ID"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Account ID", Int64.Type}, {"L1 short", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"L4", "L4 Index"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

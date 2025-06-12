@@ -1,0 +1,50 @@
+table Budget
+	lineageTag: c15a63bf-03f9-475d-ab57-2f336ad8614e
+
+	column 'Account Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f431f00-de25-4293-ac29-9f19776dece8
+		summarizeBy: none
+		sourceColumn: Account Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount (USD)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3933f910-0529-420a-8292-b705e9c04858
+		summarizeBy: sum
+		sourceColumn: Amount (USD)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 32edf1c2-9998-4e09-8973-4c2720be20bd
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Budget = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("xe6b73af6wce5cpkwv3dpk3vzi-d3eexxnlcfeuvekhkfenm33jbm.datawarehouse.fabric.microsoft.com"),
+				    dw_dezerius_demo_client = Source{[Name="dw_dezerius_demo_client"]}[Data],
+				    dbo_Budget = dw_dezerius_demo_client{[Schema="dbo",Item="Budget"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dbo_Budget,{{"Account Number", Int64.Type}, {"Account Name", type text}, {"Amount (USD)", Int64.Type}, {"Month", Int64.Type}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"Month"}, #"Date DIM", {"Month ID"}, "Date DIM", JoinKind.LeftOuter),
+				    #"Expanded Date DIM" = Table.ExpandTableColumn(#"Merged Queries", "Date DIM", {"Date"}, {"Date"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Date DIM",{"Account Name", "Month"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

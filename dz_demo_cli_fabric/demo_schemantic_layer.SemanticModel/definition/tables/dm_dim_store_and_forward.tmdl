@@ -1,0 +1,44 @@
+table dm_dim_store_and_forward
+	lineageTag: cc67f38e-1ec9-4a87-9795-e3ab8899ec82
+	sourceLineageTag: [dbt_csl_dm].[dm_dim_store_and_forward]
+
+	column store_and_fwd_flg
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2eae0efa-d6bb-4052-853b-8606635749aa
+		sourceLineageTag: store_and_fwd_flg
+		summarizeBy: none
+		sourceColumn: store_and_fwd_flg
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_and_fwd_desc
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 43375029-792f-4a77-aeec-ff02535f7be4
+		sourceLineageTag: store_and_fwd_desc
+		summarizeBy: none
+		sourceColumn: store_and_fwd_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_updated_at_dttm
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e8802608-10ec-4e89-9291-45e294c0ed46
+		sourceLineageTag: m_updated_at_dttm
+		summarizeBy: none
+		sourceColumn: m_updated_at_dttm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dm_dim_store_and_forward = entity
+		mode: directLake
+		source
+			entityName: dm_dim_store_and_forward
+			schemaName: dbt_csl_dm
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

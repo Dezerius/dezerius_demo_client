@@ -1,0 +1,45 @@
+table dm_dim_payment_type
+	lineageTag: 7a7c81e0-aee6-44f8-a73a-8407ba5685e7
+	sourceLineageTag: [dbt_csl_dm].[dm_dim_payment_type]
+
+	column payment_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 73ca8f9b-95fa-4783-9d0c-4d899d029ee6
+		sourceLineageTag: payment_type_id
+		summarizeBy: none
+		sourceColumn: payment_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type_desc
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 21f3ecb7-8f64-4dbf-97c3-5450b88c5a6b
+		sourceLineageTag: payment_type_desc
+		summarizeBy: none
+		sourceColumn: payment_type_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_updated_at_dttm
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7ff1d93a-0457-4077-bbdc-d6ba87b921a8
+		sourceLineageTag: m_updated_at_dttm
+		summarizeBy: none
+		sourceColumn: m_updated_at_dttm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dm_dim_payment_type = entity
+		mode: directLake
+		source
+			entityName: dm_dim_payment_type
+			schemaName: dbt_csl_dm
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

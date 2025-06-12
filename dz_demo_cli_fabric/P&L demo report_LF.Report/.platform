@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "P&L demo report_LF"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "619686b7-f188-a90b-4dfe-a7ce72c0d0d6"
+  }
+}

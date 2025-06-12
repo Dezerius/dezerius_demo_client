@@ -1,0 +1,24 @@
+relationship 3edda753-80eb-4421-8ac3-65f706f376b4
+	fromColumn: Account.'Account Number'
+	toColumn: 'coa DIM'.'Account ID'
+
+relationship 9f1154f8-d0dc-45ff-b587-d48d23e9a7e7
+	fromColumn: Budget.'Account Number'
+	toColumn: 'coa DIM'.'Account ID'
+
+relationship 1435224d-dd5a-4d1a-b06d-7f1632b39089
+	fromColumn: Forecast.'Account Number'
+	toColumn: 'coa DIM'.'Account ID'
+
+relationship 4a1fcb61-1026-48f5-b87a-8768f8159b77
+	fromColumn: Account.Date
+	toColumn: Date.Date
+
+relationship 31f025f0-2a3c-4d37-85cf-68951032a43d
+	fromColumn: Budget.Date
+	toColumn: Date.Date
+
+relationship 108d0864-27f9-4a32-9691-100fc3a9d0c1
+	fromColumn: Forecast.Date
+	toColumn: Date.Date
+

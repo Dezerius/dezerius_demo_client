@@ -1,0 +1,45 @@
+table dm_dim_rate_code
+	lineageTag: e5cdc8ae-2f4e-4921-8395-de7220c04718
+	sourceLineageTag: [dbt_csl_dm].[dm_dim_rate_code]
+
+	column rate_code_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2ddff352-c325-484b-b4ca-2efa4b8adb14
+		sourceLineageTag: rate_code_id
+		summarizeBy: none
+		sourceColumn: rate_code_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column rate_code_desc
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5869928b-bf48-4851-99cc-cc553b21d725
+		sourceLineageTag: rate_code_desc
+		summarizeBy: none
+		sourceColumn: rate_code_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_updated_at_dttm
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a4f1debb-af3b-4691-b658-dcaccea0ee90
+		sourceLineageTag: m_updated_at_dttm
+		summarizeBy: none
+		sourceColumn: m_updated_at_dttm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dm_dim_rate_code = entity
+		mode: directLake
+		source
+			entityName: dm_dim_rate_code
+			schemaName: dbt_csl_dm
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,27 @@
+table 'Direct Materials'
+	lineageTag: 4286131b-fcbe-492f-a9b5-50f3bb3ba208
+
+	measure 'Direct Materials Value' = SELECTEDVALUE('Direct Materials'[Direct Materials])
+		lineageTag: 5727492d-02f8-499e-92a1-0512a5bc8c40
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Direct Materials'
+		formatString: 0%;-0%;0%
+		lineageTag: 536d71ee-77ca-41ca-85b5-0e8a50fbc6f9
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Direct Materials' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = 78482e5a061d4afa8d2b93ae072df7d6
+

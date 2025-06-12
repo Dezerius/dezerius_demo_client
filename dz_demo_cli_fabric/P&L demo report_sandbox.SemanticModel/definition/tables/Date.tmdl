@@ -1,0 +1,128 @@
+table Date
+	lineageTag: 3e8cca7c-6b6f-485a-8e38-c8c668f1a8e3
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 0a098e63-b30b-471b-9b0f-69a2f63ae55e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		formatString: 0
+		lineageTag: 405460a3-25c3-4617-8f6a-486df0c3d53e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: ae090e22-120c-456f-aa0a-9db2c0618dd5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name'
+		lineageTag: 32d79637-f7b2-4b43-9b03-55c6b43fd06d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month name]
+		sortByColumn: 'Year month sorting'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month short name'
+		lineageTag: ec302bf8-2825-449b-b6b5-d2134270253b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month short name]
+		sortByColumn: 'Year month sorting'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		formatString: 0
+		lineageTag: 3501ac2f-c9f2-4d05-8dae-365126fc7781
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter label'
+		lineageTag: 10d21c28-4e27-4bbc-904a-4b3060aba1ac
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter label]
+		sortByColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year - Month short name'
+		lineageTag: d6df71c5-27c4-47e6-8c4f-073b594fd849
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year - Month short name]
+		sortByColumn: 'Year month sorting'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year month sorting'
+		lineageTag: 3436f407-8087-4b2c-b4de-48b8cc12f73c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year month sorting]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual month'
+		lineageTag: fb31684e-febd-4f82-aa84-821a212ebdc1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Actual month]
+		sortByColumn: 'Year month sorting'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				
+				VAR _startDate = MIN( 'Date DIM'[Date] )
+				
+				VAR _endDate = MAX( 'Date DIM'[Date] )
+				
+				RETURN
+				
+				ADDCOLUMNS(
+				    ADDCOLUMNS(
+				        ADDCOLUMNS(CALENDAR(_startDate, _endDate)
+				            ,"Year", YEAR([Date])
+				            ,"Month", MONTH([Date])
+				            ,"Month name", FORMAT([Date], "MMMM")
+				            ,"Month short name", FORMAT([Date], "MMM")
+				            ,"Quarter", QUARTER([Date])
+				        )
+				        ,"Quarter label", "Q" & [Quarter]
+				        ,"Year - Month short name", [Year] & "-" & [Month short name]
+				    )
+				    ,"Year month sorting", VALUE([Year] & RIGHT("0" & [Month], 2))
+				    , "Actual month", IF(
+				                            YEAR( TODAY()) & MONTH( TODAY()) = [Year] & [Month]
+				                            , "Actual month", [Month short name]
+				    )
+				)
+
+	annotation PBI_Id = 6c724937e55f440a94f61000ab550ec1
+

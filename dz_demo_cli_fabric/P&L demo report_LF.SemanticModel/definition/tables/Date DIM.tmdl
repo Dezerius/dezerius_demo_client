@@ -1,0 +1,47 @@
+table 'Date DIM'
+	isHidden
+	lineageTag: 265ec1f0-bb4b-4b0e-98c8-74fd2b216332
+
+	column 'Month ID'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bf477328-cd73-4d2f-aa56-68f2e38c195d
+		summarizeBy: count
+		sourceColumn: Month ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 3c96cffc-f596-460c-a676-4604318b48be
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Date DIM' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("Ncy7DcAwDAPRXVSHgPOz41kE779GAp7SHCu+zGixtozdPdzTvdzb7e5wH3fyqjNv1aAIRjgCEpKghKVZ91b7cx+0Xg==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Month ID" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Month ID", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Date", each Date.AddMonths( DateTime.LocalNow(), [Month ID] * -1 )),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Date", type date}})
+				in
+				    #"Changed Type1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

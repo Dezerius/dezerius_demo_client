@@ -1,0 +1,27 @@
+table 'Sales Revenue (Other)'
+	lineageTag: 3f24f12f-1d17-42c1-871a-dd268dbb4708
+
+	measure 'Sales Revenue (Other) Value' = SELECTEDVALUE('Sales Revenue (Other)'[Revenue (Other)])
+		lineageTag: 858f36d3-5ae6-4c7b-8a8b-a6c2bfcb15f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Revenue (Other)'
+		formatString: 0%;-0%;0%
+		lineageTag: 54cfe8ff-c9f1-4284-bcfd-b8cd9d114d19
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Revenue (Other)' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = 0cc34a6b44614578901d5efc7f80ff6a
+

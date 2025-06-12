@@ -1,0 +1,27 @@
+table 'Marketing and Advertising'
+	lineageTag: f40fce23-e169-434f-9bc1-1ced50e34c5e
+
+	measure 'Marketing and Advertising Value' = SELECTEDVALUE('Marketing and Advertising'[Marketing and Advertising])
+		lineageTag: 85a41d7b-8ea9-4b45-82ec-fa24a69f84b1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Marketing and Advertising'
+		formatString: 0%;-0%;0%
+		lineageTag: 01bdf5bf-2b28-40a0-9f6e-c42b3d1dadcc
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Marketing and Advertising' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = 7e34b62f426e4eeea5b977cce3728656
+

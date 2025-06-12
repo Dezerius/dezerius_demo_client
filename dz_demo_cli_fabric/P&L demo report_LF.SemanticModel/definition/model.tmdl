@@ -1,0 +1,39 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.139.7496.1 (Main)+061188de2d27b556d0c15d8f70c4426f68783390
+
+annotation PBI_QueryOrder = ["coa DIM","Date DIM","Calculations","Account","Budget","Forecast"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["WebModelingEdit"]
+
+ref table 'coa DIM'
+ref table 'Date DIM'
+ref table Calculations
+ref table Date
+ref table Account
+ref table Budget
+ref table Columns
+ref table Forecast
+ref table 'Revenue (Toys)'
+ref table 'Revenue (Accessories)'
+ref table 'Sales Revenue (Licensed Products)'
+ref table 'Sales Revenue (Other)'
+ref table 'Direct Materials'
+ref table 'Direct Labor'
+ref table 'Manufacturing Overhead'
+ref table 'Salaries and Wages'
+ref table 'Rent and Utilities'
+ref table 'Marketing and Advertising'
+
+ref cultureInfo en-US
+

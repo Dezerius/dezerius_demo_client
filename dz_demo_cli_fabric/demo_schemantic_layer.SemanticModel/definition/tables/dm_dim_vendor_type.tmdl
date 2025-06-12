@@ -1,0 +1,45 @@
+table dm_dim_vendor_type
+	lineageTag: ca54c04f-1671-44d8-80a0-2f2365930015
+	sourceLineageTag: [dbt_csl_dm].[dm_dim_vendor_type]
+
+	column vendor_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 91f71464-a1b1-4253-8ce2-aa0e713b41bc
+		sourceLineageTag: vendor_type_id
+		summarizeBy: none
+		sourceColumn: vendor_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendor_type_desc
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 26257e77-d340-4b49-8fcb-efe299fbabae
+		sourceLineageTag: vendor_type_desc
+		summarizeBy: none
+		sourceColumn: vendor_type_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column m_updated_at_dttm
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fc906995-09c4-426d-b657-e855c6522361
+		sourceLineageTag: m_updated_at_dttm
+		summarizeBy: none
+		sourceColumn: m_updated_at_dttm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dm_dim_vendor_type = entity
+		mode: directLake
+		source
+			entityName: dm_dim_vendor_type
+			schemaName: dbt_csl_dm
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

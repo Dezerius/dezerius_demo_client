@@ -1,0 +1,27 @@
+table 'Revenue (Accessories)'
+	lineageTag: 448febc6-f697-4d95-9bfe-ce551fe5a2ea
+
+	measure 'Sales Revenue (Accessories) Value' = SELECTEDVALUE('Revenue (Accessories)'[Revenue (Accessories)])
+		lineageTag: e23b055d-c948-4207-94ec-96d4ca6ffafa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Revenue (Accessories)'
+		formatString: 0%;-0%;0%
+		lineageTag: 09894708-3044-4273-9010-a58a409f5239
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Revenue (Accessories)' = calculated
+		mode: import
+		source = GENERATESERIES(-1, 1, 0.01)
+
+	annotation PBI_Id = 188e1032da8d4db79329efbb095b5d2e
+
