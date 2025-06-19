@@ -7,3 +7,5 @@ expression DatabaseQuery =
 
 	annotation PBI_IncludeFutureArtifacts = False
 
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbt_csl_dwh].[dwh_dim_rate_code]"}},"objectType":"Table"}]
+

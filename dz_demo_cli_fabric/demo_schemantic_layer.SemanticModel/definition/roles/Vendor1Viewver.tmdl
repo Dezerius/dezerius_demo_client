@@ -1,0 +1,7 @@
+role Vendor1Viewver
+	modelPermission: read
+
+	tablePermission dm_dim_vendor_type = [vendor_type_id] == 1
+
+	annotation PBI_Id = 27184837c6dc45f5a19e5774ef9e84eb
+
