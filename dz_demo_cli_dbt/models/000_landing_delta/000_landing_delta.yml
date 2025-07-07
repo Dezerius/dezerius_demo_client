@@ -20,6 +20,8 @@ sources:
       identifier: ld_nyt_nytgreentriptypedim
     - name: ld_nyt_nytgreenvendortypedim
       identifier: ld_nyt_nytgreenvendortypedim
+    - name: ld_futu_km_status_sample
+      identifier: ld_futu_km_status_sample
 
 
 
