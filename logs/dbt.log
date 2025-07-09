@@ -97,3 +97,18 @@ Internal Error
 [0m10:31:03.400948 [debug] [MainThread]: Command `dbt debug` failed at 10:31:03.399948 after 4.33 seconds
 [0m10:31:03.400948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BD9506B320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BD95E54E30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BD9612AF00>]}
 [0m10:31:03.401949 [debug] [MainThread]: Flushing usage events
+[0m07:07:50.187543 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A50751F1A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5050D8860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A506D58080>]}
+
+
+============================== 07:07:50.192675 | 90758965-29bc-4efc-b119-269e9208c89f ==============================
+[0m07:07:50.192675 [info ] [MainThread]: Running with dbt=1.9.2
+[0m07:07:50.193691 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\AdamVegh\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select dwh_futu_dim_car', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m07:07:50.193691 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Munka\VSCode\dezerius_demo_client\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m07:07:50.194691 [debug] [MainThread]: Command `dbt run` failed at 07:07:50.194691 after 0.32 seconds
+[0m07:07:50.194691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A504700F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5078E6C60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A50751F1A0>]}
+[0m07:07:50.195691 [debug] [MainThread]: Flushing usage events
+[0m07:07:50.883236 [debug] [MainThread]: An error was encountered while trying to flush usage events

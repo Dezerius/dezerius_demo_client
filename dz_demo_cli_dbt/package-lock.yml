@@ -1,10 +1,10 @@
 packages:
   - package: dbt-labs/dbt_utils
     version: 1.2.0
-  - package: calogica/dbt_date
+  - package: godatadriven/dbt_date
     version: 0.10.1
   - package: dbt-labs/codegen
     version: 0.12.1
   - package: data-mie/dbt_profiler
     version: 0.8.2
-sha1_hash: 51b5c6f414c7b80b3c70c20888e67fd991aac0f1
+sha1_hash: ff6f3d4b6f6505f8ab87282c64b1b0dc6ced5f66
